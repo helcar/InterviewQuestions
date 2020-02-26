@@ -10,7 +10,7 @@ void showInformation() {
 	cout << "Date: 2020.02.25" << endl;
 	cout << "Language: C++" << endl;
 	cout << "Environment: VSCode" << endl;
-	cout << "GitHub Pages: " << endl;
+	cout << "GitHub Pages: https://github.com/SaberDa/InterviewQuestions/tree/master/BrainCrop" << endl;
 	cout << " " << endl;
 
 }

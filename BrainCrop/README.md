@@ -1,0 +1,1 @@
+![question](D:\Code\InterViewQuestions\BrainCrop\Gengda-Li\image\question.png)
