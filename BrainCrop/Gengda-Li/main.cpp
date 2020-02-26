@@ -23,18 +23,16 @@ void example_file() {
 
 int main() {
 
-	test();
-
+	statement();
+	example_file();
 	vector<vector<float>> input;
-	input = gen_random_test(10, 10);
+	input = gen_random_test(10, 20, 100);
 	print(input);
 	Filter F1;
 	vector<vector<float>> med_res = F1.temp_med_update(input);
 	print(med_res);
 	vector<vector<float>> range_res = F1.range_update(input);
-	print(input);
-
-	example_file();
+	print(range_res);
 
 	return 0;
 }

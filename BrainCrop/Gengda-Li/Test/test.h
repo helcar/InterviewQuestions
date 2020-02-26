@@ -5,42 +5,33 @@
 
 using namespace std;
 
-vector<vector<float>> gen_random_test(int size, int range) {
-    if (size > 1000 || size < 0) {
+/**
+ * 
+ * @param  {int} size               : 
+ * @param  {int} range              : 
+ * @return {vector<vector<float>>}  : 
+ */
+vector<vector<float>> gen_random_test(int col, int row, int range) {
+    if (col > 1000 || col < 0 || row > 1000 || row < 0) {
         cout << "input out of size" << endl;
         exit(1);
     }
     cout << "Random test case: " << endl;
-    cout << " We will generate a " << size << " * " << size << " input size matrix" << endl;
-    vector<vector<float>> res(size, vector<float>(size));
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    cout << " We will generate a " << col << " * " << row << " input size matrix" << endl;
+    vector<vector<float>> res(col, vector<float>(row));
+    for (int i = 0; i < col; i++) {
+        for (int j = 0; j < row; j++) {
             res[i][j] = rand() % range;
         }
     }
     return res;
 }
 
-// vector<vector<float>>& example() {
-//     vector<vector<float>> input;
-// 	input.push_back({ 0.,1.,2.,1.,3. });
-// 	input.push_back({ 1.,5.,7.,1.,3. });
-// 	input.push_back({ 2.,3.,4.,1.,0. });
-// 	input.push_back({ 3.,3.,3.,1.,3. });
-// 	input.push_back({ 10.,2.,4.,0.,0. });
-//     return input;
-// }
-
-// vector<vector<float>>& example_med_answer() {
-//     vector<vector<float>> med_ans;
-//     med_ans.push_back({ 0.,1.,2.,1.,3. });
-//     med_ans.push_back({ 0.5,3,4.5,1.,3. });
-//     med_ans.push_back({ 1.,3.,4.,1.,3.});
-//     med_ans.push_back({ 1.5,3.,3.5,1.,3.});
-//     med_ans.push_back({ 2.5,3.,4.,1.,1.5});
-//     return med_ans;
-// }
-
+/**
+ * 
+ * @param  {vector<vector<float>>} T1 : 
+ * @param  {vector<vector<float>>} T2 : 
+ */
 void check(vector<vector<float>>& T1, vector<vector<float>>& T2) {
     int T1_size = T1.size();
     int T2_size = T2.size();
@@ -49,13 +40,12 @@ void check(vector<vector<float>>& T1, vector<vector<float>>& T2) {
         return ;
     }
     for (int i = 0; i < T1.size(); i++) {
-        if (T1[i] == T2[i]) {
-            cout << "T" << i << " check: Passed" << endl; 
-        } else {
-            cout << "T" << i << " check: Failed" << endl; 
-        }
+        if (T1[i] == T2[i]) cout << "T" << i << " check: Passed" << endl; 
+        else cout << "T" << i << " check: Failed" << endl; 
     }
+    cout << " " << endl;
 }
+
 
 void showInformation() {
 
@@ -79,10 +69,8 @@ void print(vector<vector<float>>& nums) {
 	cout << " " << endl;
 }
 
-void test() {
+void statement() {
 
     showInformation();
-
-    
 
 }
