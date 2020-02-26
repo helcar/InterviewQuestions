@@ -21,18 +21,22 @@ void example_file() {
 	check(med_ans, example_med_res);
 }
 
-int main() {
-
-	statement();
-	example_file();
+void test_random(int col, int row, int range) {
 	vector<vector<float>> input;
-	input = gen_random_test(10, 20, 100);
+	input = gen_random_test(col, row, range);
 	print(input);
 	Filter F1;
 	vector<vector<float>> med_res = F1.temp_med_update(input);
 	print(med_res);
 	vector<vector<float>> range_res = F1.range_update(input);
 	print(range_res);
+}
+
+int main() {
+
+	statement();
+	example_file();
+	test_random(10, 20, 100);
 
 	return 0;
 }
