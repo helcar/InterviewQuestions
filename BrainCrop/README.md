@@ -1,1 +1,1 @@
-![question](D:\Code\InterViewQuestions\BrainCrop\Gengda-Li\image\question.png)
+![question](https://github.com/SaberDa/InterviewQuestions/blob/master/BrainCrop/Gengda-Li/image/question.png)
