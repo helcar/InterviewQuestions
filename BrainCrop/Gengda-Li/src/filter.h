@@ -106,19 +106,12 @@ vector<vector<float>> Filter::temp_med_filter(vector<vector<float>>& temp, vecto
 	vector<vector<float>> med_res(input.size(), vector<float>(input[0].size()));
 	for (int i = 0; i < temp.size(); i++) {
 		for (int j = 0; j < temp[0].size(); j++) {
-			if (j - d <= 0) {
-				vector<float> t;
-				int jj = j;
-				while (jj >= 0) t.push_back(temp[i][jj--]);
-				sort(t.begin(), t.end());
-				med_res[j][i] = median(t);
-			} else {
-				vector<float> t;
-				int jj = j;
-				while (jj >= j-d) t.push_back(temp[i][jj--]);
-				sort(t.begin(), t.end());
-				med_res[j][i] = median(t);
-			}
+			vector<float> t;
+			int bound = (j - d <= 0) ? 0 : j - d;
+			int jj = j;
+			while (jj >= bound) t.push_back(temp[i][jj--]);
+			sort(t.begin(), t.end());
+			med_res[j][i] = median(t);
 		}
 	}
 	return med_res;
