@@ -12,7 +12,7 @@ using namespace std;
  * @return {vector<vector<float>>}  : 
  */
 vector<vector<float>> gen_random_test(int col, int row, int range) {
-    if (col > 1000 || col < 0 || row > 1000 || row < 0) {
+    if (col < 0 || row > 1000 || row < 0) {
         cout << "input out of size" << endl;
         exit(1);
     }
