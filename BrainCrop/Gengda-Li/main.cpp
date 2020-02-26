@@ -3,24 +3,38 @@
 
 using namespace std;
 
-void showInformation() {
-
-	cout << "Title: Robotic Engineer - Entry/Mid Level" << endl;
-	cout << "Name: Gengda Li" << endl;
-	cout << "Date: 2020.02.25" << endl;
-	cout << "Language: C++" << endl;
-	cout << "Environment: VSCode" << endl;
-	cout << "GitHub Pages: https://github.com/SaberDa/InterviewQuestions/tree/master/BrainCrop" << endl;
-	cout << " " << endl;
-
+void example_file() {
+	vector<vector<float>> input;
+	input.push_back({ 0.,1.,2.,1.,3. });
+	input.push_back({ 1.,5.,7.,1.,3. });
+	input.push_back({ 2.,3.,4.,1.,0. });
+	input.push_back({ 3.,3.,3.,1.,3. });
+	input.push_back({ 10.,2.,4.,0.,0. });
+	vector<vector<float>> med_ans;
+    med_ans.push_back({ 0.,1.,2.,1.,3. });
+    med_ans.push_back({ 0.5,3,4.5,1.,3. });
+    med_ans.push_back({ 1.,3.,4.,1.,3.});
+    med_ans.push_back({ 1.5,3.,3.5,1.,3.});
+    med_ans.push_back({ 2.5,3.,4.,1.,1.5});
+	Filter F2;
+	vector<vector<float>> example_med_res = F2.temp_med_update(input);
+	check(med_ans, example_med_res);
 }
 
-int main(){
+int main() {
 
-	showInformation();
-	// Run test cases
-	Test TEST;
-	TEST.tests();
+	test();
+
+	vector<vector<float>> input;
+	input = gen_random_test(10, 10);
+	print(input);
+	Filter F1;
+	vector<vector<float>> med_res = F1.temp_med_update(input);
+	print(med_res);
+	vector<vector<float>> range_res = F1.range_update(input);
+	print(input);
+
+	example_file();
 
 	return 0;
 }
