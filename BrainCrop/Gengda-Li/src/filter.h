@@ -6,8 +6,10 @@ using namespace std;
 
 /**
  * 
- * @param  {vector<float>} data : 
- * @return {float}              : 
+ * Calculate the median
+ * 
+ * @param  {vector<float>} data : the input vector
+ * @return {float}              : the median
  */
 static inline float median(vector<float> &data) {
 	int size = data.size();
@@ -34,7 +36,9 @@ public:
 /**
  * Filter 
  * 
- * @param  {vector<vector<float>>} input : 
+ *  Judge the input matrix size, if it is out of the max size, exit the program and given the err code 1
+ * 
+ * @param  {vector<vector<float>>} input : the input matrix
  * @return {bool}                        : 
  */
 bool Filter::judgeSize(vector<vector<float>>& input) {
@@ -46,7 +50,9 @@ bool Filter::judgeSize(vector<vector<float>>& input) {
 /**
  * Filter 
  * 
- * @param  {vector<float>} scan : 
+ * Scan the input matrix and update one line each time
+ * 
+ * @param  {vector<float>} scan : the input vector
  * @return {vector<float>}      : 
  */
 vector<float> Filter::range_filter(vector<float>& scan) {
@@ -64,6 +70,8 @@ vector<float> Filter::range_filter(vector<float>& scan) {
 /**
  * Filter 
  * 
+ * Run Range Filter function
+ * 
  * @param  {vector<vector<float>>} input : 
  * @return {vector<vector<float>>}       : 
  */
@@ -77,6 +85,8 @@ vector<vector<float>> Filter::range_update(vector<vector<float>>& input) {
 
 /**
  * Filter 
+ * 
+ * Transpose a matrix
  * 
  * @param  {vector<vector<float>>} A : 
  * @return {vector<vector<float>>}   : 
@@ -97,9 +107,11 @@ vector<vector<float>> Filter::transpose(vector<vector<float>>& A)  {
 /**
  * Filter 
  * 
- * @param  {vector<vector<float>>} temp  : 
- * @param  {vector<vector<float>>} input : 
- * @param  {int} d                       : 
+ * Calculate the median
+ * 
+ * @param  {vector<vector<float>>} temp  : the transpose matrix of the origin matrix
+ * @param  {vector<vector<float>>} input : the origin matrix
+ * @param  {int} d                       : the number of previous scan elements
  * @return {vector<vector<float>>}       : 
  */
 vector<vector<float>> Filter::temp_med_filter(vector<vector<float>>& temp, vector<vector<float>>& input, int d) {
@@ -119,6 +131,8 @@ vector<vector<float>> Filter::temp_med_filter(vector<vector<float>>& temp, vecto
 
 /**
  * Filter 
+ * 
+ * Run the Median Filter Function
  * 
  * @param  {vector<vector<float>>} input : 
  * @return {vector<vector<float>>}       : 

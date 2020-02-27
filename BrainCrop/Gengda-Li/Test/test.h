@@ -7,8 +7,11 @@ using namespace std;
 
 /**
  * 
- * @param  {int} size               : 
- * @param  {int} range              : 
+ * To generate the col * row size input matrix
+ * 
+ * @param  {int} col                : col
+ * @param  {int} row                : row
+ * @param  {int} range              : random range, from 0 ~ range
  * @return {vector<vector<float>>}  : 
  */
 vector<vector<float>> gen_random_test(int col, int row, int range) {
@@ -28,6 +31,8 @@ vector<vector<float>> gen_random_test(int col, int row, int range) {
 }
 
 /**
+ * 
+ * Compare two matrix to check if they are the same
  * 
  * @param  {vector<vector<float>>} T1 : 
  * @param  {vector<vector<float>>} T2 : 
@@ -59,6 +64,11 @@ void showInformation() {
 
 }
 
+/**
+ * Print the matrix
+ * 
+ * @param  {vector<vector<float>>} nums : the matrix
+ */
 void print(vector<vector<float>>& nums) {
     for (int i = 0; i < nums.size(); i++) {
 		for (int j = 0; j < nums[0].size(); j++) {
