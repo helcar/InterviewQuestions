@@ -23,6 +23,6 @@ vector<string> funWithAnagrams(vector<string> &str) {
 int main() {
     vector<string> str({"code", "doce", "ecod", "framer", "frame"});
     vector<string> res = funWithAnagrams(str);
-    for (auto s : res) cout << s << " ";
+    // for (auto s : res) cout << s << " ";
     return 0;
 }
